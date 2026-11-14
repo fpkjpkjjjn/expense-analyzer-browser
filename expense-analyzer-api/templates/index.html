@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мои траты</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='expenses.css') }}">
+  <script defer src="{{ url_for('static', filename='expenses.js') }}"></script>
+</head>
+<body>
+  <main class="workspace">
+    <header class="page-header">
+      <h1>Мои траты</h1>
+      <p>Добавьте траты, чтобы увидеть, куда ушли деньги.</p>
+    </header>
+
+    <div class="panels">
+      <section class="panel" aria-labelledby="entry-title">
+        <h2 id="entry-title">Добавить трату</h2>
+        <form id="expense-form">
+          <fieldset id="entry-controls" aria-labelledby="entry-title">
+            <label for="description">Описание</label>
+            <input id="description" name="description" placeholder="Например, COOP Jednota" required>
+
+            <div class="form-row">
+              <div>
+                <label for="date">Дата</label>
+                <input id="date" name="date" type="date" required>
+              </div>
+              <div>
+                <label for="amount">Сумма, €</label>
+                <input id="amount" name="amount" inputmode="decimal" placeholder="0,00" required>
+              </div>
+            </div>
+
+            <button class="secondary" type="submit">Добавить</button>
+            <div class="entries">
+              <h3>Список трат</h3>
+              <p class="muted" id="entries-placeholder">Список пока пуст.</p>
+              <ul id="entries" class="detail-list"></ul>
+            </div>
+            <button class="primary" id="analyze" type="button" disabled>Проанализировать</button>
+          </fieldset>
+        </form>
+        <p class="error" id="analysis-error" role="alert" hidden></p>
+      </section>
+
+      <section class="panel" aria-labelledby="report-title">
+        <h2 id="report-title">Отчёт</h2>
+        <p class="muted" id="report-placeholder" role="status">После анализа здесь появятся категории и суммы.</p>
+        <div id="report" hidden>
+          <dl class="total">
+            <dt>Всего потрачено</dt>
+            <dd id="total"></dd>
+          </dl>
+          <h3>По категориям</h3>
+          <ul class="detail-list" id="by-category"></ul>
+          <h3>По неделям</h3>
+          <ul class="detail-list" id="by-week"></ul>
+          <h3>Крупнейшие траты</h3>
+          <ul class="detail-list" id="top-transactions"></ul>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,25 +1,10 @@
-"""
-JSON API для мобильного приложения (React Native).
-
-Отличия от старого app.py:
-- Не рендерит HTML — только JSON.
-- CORS включён, чтобы к серверу можно было стучаться с телефона/эмулятора.
-- Файл анализируется прямо в памяти, ничего не сохраняется на диск
-  (для мобильного клиента постоянное хранилище на сервере не нужно).
-
-Запуск:
-    pip install -r requirements.txt
-    python api.py
-
-По умолчанию слушает на 0.0.0.0:5000, чтобы телефон в той же Wi-Fi сети
-мог достучаться до сервера по IP компьютера (например http://192.168.1.23:5000).
-"""
+"""Локальный веб-интерфейс и JSON API анализатора трат."""
 
 import os
 import tempfile
 import traceback
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
 
 from analyzer import load_and_analyze, analyze_transactions
@@ -28,6 +13,11 @@ app = Flask(__name__)
 CORS(app)  # разрешаем запросы с любого origin — упрощает разработку RN-приложения
 
 ALLOWED_EXTENSIONS = {"csv", "xlsx", "xls"}
+
+
+@app.get("/")
+def index():
+    return render_template("index.html")
 
 
 def allowed_file(filename: str) -> bool:
@@ -152,5 +142,4 @@ def not_found(_e):
 
 
 if __name__ == "__main__":
-    # host="0.0.0.0" — обязательно, иначе с телефона по Wi-Fi не достучаться.
-    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+    app.run(host="127.0.0.1", port=5000)
