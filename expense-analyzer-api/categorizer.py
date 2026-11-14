@@ -8,7 +8,7 @@ MERCHANTS = {
     "Groceries": (
         "Lidl", "Kaufland", "Billa", "Tesco", "COOP Jednota", "Jednota", "Terno",
         "Kraj potraviny", "Kraj potravín", "Fresh potraviny", "Fresh Plus", "Yeme", "Biedronka",
-        "Moja samoška", "Milk Agro", "Wolt Market", "Bolt Market",
+        "Moja samoška", "Milk Agro", "Wolt Market", "Bolt Market", "Viet Market", 
     ),
     "Transport": (
         "Bolt", "Uber", "ZSSK", "Slovakrail", "Slovak Lines", "RegioJet", "Leo Express",
@@ -18,10 +18,11 @@ MERCHANTS = {
     "Subscriptions": (
         "Spotify", "Netflix", "Disney Plus", "HBO Max", "YouTube Premium",
         "Apple Music", "iCloud", "Voyo", "Skylink", "Wolt Plus", "Bolt Plus",
+        "YouTube Music", "Claude", "ChatGPT", "Telegram Premium", "Discord Nitro",
     ),
     "Dining": (
         "Bolt Food", "Uber Eats", "Wolt", "Bistro.sk", "McDonald’s",
-        "McDonalds", "KFC", "Burger King", "Starbucks",
+        "McDonalds", "KFC", "Burger King", "Starbucks", "Cafe",
     ),
     "Shopping": (
         "Alza", "NAY", "Datart", "Mall.sk", "IKEA", "Decathlon", "Pepco",
