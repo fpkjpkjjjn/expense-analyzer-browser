@@ -9,12 +9,11 @@ MERCHANTS = {
         "Lidl", "Kaufland", "Billa", "Tesco", "COOP Jednota", "Jednota", "Terno",
         "Kraj potraviny", "Kraj potravín", "Fresh potraviny", "Fresh Plus", "Yeme", "Biedronka",
         "Moja samoška", "Milk Agro", "Wolt Market", "Bolt Market",
-        "Pyaterochka", "Magnit",
     ),
     "Transport": (
         "Bolt", "Uber", "ZSSK", "Slovakrail", "Slovak Lines", "RegioJet", "Leo Express",
         "DPB", "Dopravný podnik", "IDS BK", "IDSBK", "ARRIVA", "Slovnaft", "OMV",
-        "Shell", "Orlen", "eZnámka", "Lukoil",
+        "Shell", "Orlen", "eZnámka",
     ),
     "Subscriptions": (
         "Spotify", "Netflix", "Disney Plus", "HBO Max", "YouTube Premium",
@@ -27,7 +26,6 @@ MERCHANTS = {
     "Shopping": (
         "Alza", "NAY", "Datart", "Mall.sk", "IKEA", "Decathlon", "Pepco",
         "Action", "KiK", "dm", "dm drogerie", "Teta drogéria", "Notino",
-        "Ozon", "Wildberries",
     ),
     "Health": (
         "Dr. Max", "DrMax", "BENU", "Pilulka", "Union zdravotná poisťovňa",
